@@ -4,12 +4,12 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.color_scheme = 'Gruvbox Dark (Gogh)'
+config.color_scheme = 'Gruvbox Material (Gogh)'
 config.automatically_reload_config = true
 -- config.enable_tab_bar = false
 config.window_close_confirmation = 'NeverPrompt'
 
-config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
+config.font = wezterm.font 'Hack Nerd Font'
 config.font_size = 12.5
 
 wezterm.on('update-right-status', function(window, pane)
@@ -18,13 +18,14 @@ wezterm.on('update-right-status', function(window, pane)
 end)
 
 -- Tabs
-config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
-config.show_tabs_in_tab_bar = true
-config.show_new_tab_button_in_tab_bar = false
---config.switch_to_last_active_tab_when_closing_tab = true
+-- config.tab_bar_at_bottom = true
+-- config.use_fancy_tab_bar = false
+-- config.show_tabs_in_tab_bar = true
+-- config.show_new_tab_button_in_tab_bar = false
+-- config.switch_to_last_active_tab_when_closing_tab = true
+config.enable_tab_bar = false
 
-config.leader = { key = 'a', mods = 'CTRL' }
+config.leader = { key = 's', mods = 'CTRL' }
 config.keys = {
   { key = 'a', mods = 'LEADER|CTRL', action = wezterm.action { SendString = '\x01' } },
   { key = '-', mods = 'LEADER', action = wezterm.action { SplitVertical = { domain = 'CurrentPaneDomain' } } },
